@@ -2,17 +2,26 @@ from typing import Dict, Tuple
 import pandas as pd
 
 
-def format_profit(amount: int) -> int:
+
+import numpy as np
+
+def format_profit_correct(amount):
     """
-    Выделяет цифры прибыли из числа вида '202424 937 596 0000₽' → int(9375960000).
+    Выделяет цифры прибыли из числа вида '202424 937 596 0000₽' → int(249375960000).
     """
-    text = str(amount)
-    clean = text.replace("\xa0", "").replace("₽", "")
-    if len(clean) <= 4:
-        return np.nan
-    elif clean[4:] == '—' or clean[4:] == '-':
-        return np.nan
-    return int(clean[4:])
+    if isinstance(amount, str):
+        clean = amount.replace("\xa0", "").replace("₽", "").replace(" ", "").replace("-", "").replace("—", "")
+        if len(clean) <= 4:
+            return np.nan
+        clean = clean[4:]  
+        if clean == "" or clean == "-":
+            return np.nan
+        try:
+            return int(clean)
+        except ValueError:
+            return np.nan
+    return np.nan
+
 
 
 def build_company_data(
