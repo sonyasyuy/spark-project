@@ -1,3 +1,5 @@
+from graph_construction import CompanyUnionFind
+
 if __name__ == "__main__":
     uf = CompanyUnionFind()
     uf.make_company("Группа-А")
