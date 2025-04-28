@@ -1,3 +1,5 @@
+from dsu.graph_construction import CompanyUnionFind
+from dsu.data_insertion import uf
 import numpy as np
 from typing import Dict, Tuple
 
