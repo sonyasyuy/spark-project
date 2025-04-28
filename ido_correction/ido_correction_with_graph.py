@@ -1,3 +1,5 @@
+from dsu.data_insertion import uf
+
 alpha = 1.1
 corrected_idos = correct_ido(data_company, uf, alpha)
 
