@@ -1,3 +1,4 @@
+from graph_construction import CompanyUnionFind
 from typing import Dict, Tuple
 import pandas as pd
 
