@@ -1,5 +1,6 @@
 from dsu.data_insertion import uf
 from ido_algo_realization import correct_ido
+from dsu.data_insertion import data_company
 
 alpha = 1.1
 corrected_idos = correct_ido(data_company, uf, alpha)

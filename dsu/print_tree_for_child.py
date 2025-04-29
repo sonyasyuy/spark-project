@@ -1,7 +1,8 @@
 from __future__ import annotations
 from typing import Dict, List, Set, Tuple
 import pandas as pd
-import numpy as np
+from data_insertion import format_profit
+from graph_construction import CompanyUnionFind
 
 def build_company_data_and_children(
     df: pd.DataFrame,
@@ -38,7 +39,7 @@ def print_recursive_descendants(name: str, children_map: Dict[str, List[str]]):
         print_recursive_descendants(child, children_map)
 
 if __name__ == "__main__":
-    df = pd.read_excel("izdevatelstvo.xlsx")
+    df = pd.read_excel("data.xlsx")
     uf = CompanyUnionFind()
     data_company, children_map = build_company_data_and_children(df, uf)
 

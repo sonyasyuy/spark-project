@@ -6,7 +6,7 @@ import pandas as pd
 
 import numpy as np
 
-def format_profit_correct(amount):
+def format_profit(amount):
     """
     Выделяет цифры прибыли из числа вида '202424 937 596 0000₽' → int(249375960000).
     """
@@ -54,7 +54,7 @@ def build_company_data(
 
 if __name__ == "__main__":
 
-    df = pd.read_excel("izdevatelstvo.xlsx")
+    df = pd.read_excel("data.xlsx")
     uf = CompanyUnionFind()
     data_company = build_company_data(df, uf)
 
